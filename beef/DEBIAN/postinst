@@ -1,0 +1,31 @@
+        echo "[*] installing gems ..."
+	cd ${PREFIX}/share/beef-xss
+	chmod 777 beef
+	gem install bundler
+	echo "[*] please wait ..."
+	gem install nokogiri -v 1.8.1 -- --use-system-libraries
+	gem update --system
+	bundle install -j8
+	echo "[*] gems installed "
+	for folder in ${PREFIX}/lib ${PREFIX}/share/beef-xss; do
+		echo "[*] Removing dt_entries ..."
+		android=$(getprop ro.build.version.release)
+		if (( ${android%.*} < 6 )); then
+			find ${folders} -executable -exec termux-elf-cleaner-5 \{\} \;
+		else
+			find ${folders} -executable -exec termux-elf-cleaner \{\} \;
+		fi
+		echo "[*] Finished"
+	done
+	## Fix Ruby 2.6.1 error for beef
+	for i in aarch64-linux-android arm-linux-androideabi \
+	i686-linux-android x86_64-linux-android; do
+	if [ -e "$PREFIX/lib/ruby/2.6.0/${i}/bigdecimal.so" ]; then
+	if [ -n "$(patchelf --print-needed "$PREFIX/lib/ruby/2.6.0/${i}/bigdecimal/util.so" | grep bigdecimal.so)" ]; then
+	exit 0
+	fi
+	patchelf --add-needed \
+	"$PREFIX/lib/ruby/2.6.0/${i}/bigdecimal.so" \
+	"$PREFIX/lib/ruby/2.6.0/${i}/bigdecimal/util.so"
+	fi
+	done

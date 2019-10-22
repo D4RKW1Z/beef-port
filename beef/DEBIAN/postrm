@@ -1,0 +1,3 @@
+	if [ -d ${PREFIX}/share/beef-xss ]; then
+		rm -rf ${PREFIX}/share/beef-xss
+	fi
