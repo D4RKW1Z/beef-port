@@ -122,6 +122,7 @@ beef.execute(function() {
     ['Real VNC4', 'RealVNC\\VNC4'],
     ['RedGate .NET Reflector', 'Red Gate\\.NET Reflector'],
     ['Resource Hacker', 'Resource Hacker'],
+    // Alternative: Resource Cracker https://www.pelock.com/products/resource-cracker
     ['Safari', 'Safari'],
     ['SeaMonkey', 'SeaMonkey'],
     ['SiteKiosk', 'SiteKiosk'],
@@ -459,6 +460,7 @@ beef.execute(function() {
     ["OpenVPN", "OpenVPN\\Uninstall.exe/2/110"],
     ["Oracle JavaFX 2.0 Runtime", "Oracle\\JavaFX 2.0 Runtime\\bin\\eula.dll/2/204"],
     ["Resource Hacker", "Resource Hacker\\ResHacker.exe/2/128"],
+    // Alternative: Resource Cracker https://www.pelock.com/download/resource-cracker.exe
     ["Samsung USB Drivers for Mobile Phones", "SAMSUNG\\USB Drivers\\Uninstall.exe/2/132"],
     ["Tencent QQDownload", "Tencent\\QQDownload\\QQDownload.exe/2/132"],
     ["QuickTime", "QuickTime\\QTinfo.exe/2/101"],
